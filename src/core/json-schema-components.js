@@ -79,6 +79,18 @@ export class JsonSchema_string extends Component {
                      onChange={ this.onChange }
                      disabled={isDisabled}/>)
     }
+    else if (schema["name"] === "Authorization") {
+      return (<DebounceInput
+                     element="textarea"
+                     className={ errors.length ? "invalid" : ""}
+                     title={ errors.length ? errors : ""}
+                     value={value}
+                     minLength={0}
+                     debounceTimeout={350}
+                     placeholder={description}
+                     onChange={ this.onChange }
+                     disabled={isDisabled}/>)
+    }
     else {
       return (<DebounceInput
                      type={ schema.format === "password" ? "password" : "text" }

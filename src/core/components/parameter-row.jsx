@@ -166,7 +166,7 @@ export default class ParameterRow extends Component {
         </td>
 
         <td className="col parameters-col_description">
-          <Markdown source={ param.get("description") }/>
+          <div className="parameter__description">{ param.get("description") }</div>
 
           { (bodyParam || !isExecute) && isDisplayParamItemsEnum ?
             <Markdown source={
@@ -177,12 +177,12 @@ export default class ParameterRow extends Component {
           }
 
           { (bodyParam || !isExecute) && paramDefaultValue !== undefined ?
-            <Markdown source={"<i>Default value</i>: " + paramDefaultValue}/>
+            <div className="parameter__defaultvalue"><span className="parameter__defaultvalue_header">{ "Default: " }</span><span className="parameter__defaultvalue_value">{ paramDefaultValue }</span></div>
             : null
           }
 
           { (bodyParam || !isExecute) && paramExample !== undefined ?
-            <Markdown source={"<i>Example</i>: " + paramExample}/>
+            <div className="parameter__examplevalue"><span className="parameter__examplevalue_header">{ "Example: " }</span><span className="parameter__examplevalue_value">{ paramExample }</span></div>
             : null
           }
 

@@ -43,6 +43,10 @@ export default class ParameterRow extends Component {
     let { isOAS3 } = specSelectors
 
     let example = param.get("example")
+
+      if (example == undefined)
+        example = param.get("x-example")
+
     let defaultValue = param.get("default")
     let parameter = specSelectors.parameterWithMeta(pathMethod, param.get("name"), param.get("in"))
     let enumValue
@@ -137,6 +141,9 @@ export default class ParameterRow extends Component {
     if ( param !== undefined ) {
       paramDefaultValue = param.get("default")
       paramExample = param.get("example")
+
+      if ( paramExample == undefined)
+        paramExample = param.get("x-example")
     }
 
     if (isDisplayParamItemsEnum) { // if we have an array, default value is in "items"

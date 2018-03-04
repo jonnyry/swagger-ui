@@ -40,10 +40,10 @@ export default class ModelExample extends React.Component {
 
     return <div>
       <ul className="tab">
-        <li className={ "tabitem" + ( isExecute || this.state.activeTab === "example" ? " active" : "") }>
-          <a className="tablinks" data-name="example" onClick={ this.activeTab }>Example Value</a>
+        <li className={ "model-example-tabitem tabitem" + ( isExecute || this.state.activeTab === "example" ? " active" : "") }>
+          <a className="tablinks" data-name="example" onClick={ this.activeTab }>Example</a>
         </li>
-        { schema ? <li className={ "tabitem" + ( !isExecute && this.state.activeTab === "model" ? " active" : "") }>
+        { schema ? <li className={ "model-model-tabitem tabitem" + ( !isExecute && this.state.activeTab === "model" ? " active" : "") }>
           <a className={ "tablinks" + ( isExecute ? " inactive" : "" )} data-name="model" onClick={ this.activeTab }>Model</a>
         </li> : null }
       </ul>

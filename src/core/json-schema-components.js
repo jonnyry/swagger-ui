@@ -79,7 +79,7 @@ export class JsonSchema_string extends Component {
                      onChange={ this.onChange }
                      disabled={isDisabled}/>)
     }
-    else if (schema["name"] === "Authorization") {
+    else if (schema["x-multiline"]) {
       return (<DebounceInput
                      element="textarea"
                      className={ errors.length ? "invalid" : ""}
